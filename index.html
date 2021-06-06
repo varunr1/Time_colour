@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+      body {
+        font-family: "Bungee Shade", cursive;
+        font-size: 7rem;
+        color: aliceblue;
+        text-align: center;
+      }
+      #flexDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="flexDiv">
+      <div id="divTime"></div>
+    </div>
+    <script>
+      let rgb;
+
+      setRgbValue = () => {
+        let current = new Date();
+        let hours = current.getHours();
+        let minutes = current.getMinutes();
+        let seconds = current.getSeconds();
+        rgb = "rgb(" + hours + "," + minutes + "," + seconds + ")";
+        time = hours + ":" + minutes + ":" + seconds;
+        document.body.style.background = rgb;
+        document.getElementById("divTime").innerHTML = time;
+      };
+
+      setInterval(setRgbValue, 1000);
+    </script>
+  </body>
+</html>
